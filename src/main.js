@@ -21,6 +21,16 @@ document.querySelector('#app').innerHTML = `
 
 const wmsUrl = '/geoserver/floodmap/wms'
 
+function fixEncoding(text) {
+  return (text || '')
+    .replaceAll('Ã¤', 'ä')
+    .replaceAll('Ã¶', 'ö')
+    .replaceAll('Ã„', 'Ä')
+    .replaceAll('Ã–', 'Ö')
+    .replaceAll('Ã¥', 'å')
+    .replaceAll('Ã…', 'Å')
+}
+
 const schoolsLayer = new VectorLayer({
   source: new VectorSource({
     url:
@@ -196,19 +206,15 @@ map.on('click', (event) => {
 
   console.log('Koulun FID:', schoolFid)
 
-  const schoolName = (feature.get('kohteen_ni') || '')
-    .replaceAll('Ã¤', 'ä')
-    .replaceAll('Ã¶', 'ö')
+  const schoolName = fixEncoding(feature.get('kohteen_ni'))
 
-  const services = (feature.get('palvelut') || '')
-    .replaceAll('Ã¤', 'ä')
-    .replaceAll('Ã¶', 'ö')
+  const services = fixEncoding(feature.get('palvelut'))
+
+  const address = fixEncoding(feature.get('osoite'))
 
   const matchingBuffer = bufferData.find(
     (buffer) =>
-      (buffer.properties.kohteen_ni || '')
-        .replaceAll('Ã¤', 'ä')
-        .replaceAll('Ã¶', 'ö') === schoolName
+      fixEncoding(buffer.properties.kohteen_ni) === schoolName
   )
 
   console.log('Löydetty bufferi:', matchingBuffer)
@@ -259,7 +265,7 @@ map.on('click', (event) => {
 
     <p>
       <strong>Osoite:</strong><br>
-      ${feature.get('osoite') || 'Ei tietoa'}
+      ${address || 'Ei tietoa'}
     </p>
 
     <p>
