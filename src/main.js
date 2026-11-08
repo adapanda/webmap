@@ -35,6 +35,7 @@ document.querySelector('#app').innerHTML = `
 
   <div class="map-container">
     <div id="map"></div>
+    <div id="depth-tooltip"></div>
 
     <div class="map-instructions">
       <h3>Explore your surroundings</h3>
@@ -101,9 +102,16 @@ document.querySelector('#app').innerHTML = `
         <span class="legend-buffer"></span>
         1 km school area
       </div>
-      <div class="legend-item">
-        <span class="legend-flood-area"></span>
-        Modelled flood depths
+      <div class="legend-depth">
+        <div class="legend-depth-title">Flood depth (cm)</div>
+        <div class="legend-depth-gradient"></div>
+        <div class="legend-depth-labels">
+          <span>10</span>
+          <span>20</span>
+          <span>30</span>
+          <span>40</span>
+          <span>50</span>
+      </div>
       </div>
     </div>
   </div>
@@ -434,6 +442,74 @@ function clipLayerToBuffer(layer) {
     }
   })
 }
+
+
+// Show flood depth when hovering over the map
+const depthTooltip = document.getElementById('depth-tooltip')
+
+let hoverTimeout
+
+map.on('pointermove', (event) => {
+  if (event.dragging) {
+    depthTooltip.style.display = 'none'
+    return
+  }
+
+  if (!document.getElementById('toggle-flood').checked) {
+    depthTooltip.style.display = 'none'
+    return
+  }
+
+  clearTimeout(hoverTimeout)
+
+  const pixel = event.pixel
+  const coordinate = event.coordinate
+
+  depthTooltip.style.display = 'none'
+
+  hoverTimeout = setTimeout(async () => {
+    const isHigh =
+      document.querySelector('input[name="scenario"]:checked').value === 'high'
+
+    const activeLayer = isHigh
+      ? highFloodLayer
+      : moderateFloodLayer
+
+    const source = activeLayer.getSource()
+
+    const url = source.getFeatureInfoUrl(
+      coordinate,
+      map.getView().getResolution(),
+      map.getView().getProjection(),
+      {
+        INFO_FORMAT: 'application/json',
+        FEATURE_COUNT: 1,
+      }
+    )
+
+    if (!url) return
+
+    try {
+      const response = await fetch(url)
+      const data = await response.json()
+
+      if (data.features && data.features.length > 0) {
+        const properties = data.features[0].properties
+
+        if (properties.DN !== undefined) {
+          depthTooltip.textContent = `Flood depth: ${properties.DN} cm`
+
+          depthTooltip.style.left = `${pixel[0] + 15}px`
+          depthTooltip.style.top = `${pixel[1] + 15}px`
+          depthTooltip.style.display = 'block'
+        }
+      }
+    } catch (error) {
+      console.error('Could not retrieve flood depth:', error)
+    }
+  }, 150)
+})
+
 
 clipLayerToBuffer(moderateFloodLayer)
 clipLayerToBuffer(highFloodLayer)
