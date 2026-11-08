@@ -164,7 +164,7 @@ document.querySelector('#app').innerHTML = `
       </label>
       <label>
         <input type="checkbox" id="toggle-buffer" checked>
-        1 km school area
+        1 km from school
       </label>
 
       <button id="reset-map">Reset map</button>
@@ -197,7 +197,7 @@ document.querySelector('#app').innerHTML = `
 
       <div class="legend-item">
         <span class="legend-buffer"></span>
-        1 km school area
+        1 km from school
       </div>
       <div class="legend-depth">
         <div class="legend-depth-title">Flood depth (cm)</div>
@@ -216,129 +216,83 @@ document.querySelector('#app').innerHTML = `
   
 
   <div class="learning-content">
-    <h2>Learn about flooding</h2>
+  <h2>Why does flooding happen in Turku?</h2>
 
-    <section class="learning-box">
-      <h3>1. Why do cities flood?</h3>
-
-      <h4>Pluvial flooding – when rainwater accumulates</h4>
-      <p>
-        During heavy rainfall, water flows over roads, roofs
-        and other hard surfaces. If it cannot soak into the
-        ground or drain away quickly enough, it can accumulate
-        in streets and low-lying areas.
-      </p>
-      <p><strong>Key concept:</strong>
-        Rainfall, runoff and urban surfaces.
-      </p>
-
-      <h4>Coastal flooding – when sea levels rise temporarily</h4>
-      <p>
-        Strong winds and weather conditions can temporarily
-        raise sea levels along the coast. In Turku, this can
-        affect low-lying waterfront areas and the lower reaches
-        of the Aura River.
-      </p>
-      <p><strong>Key concept:</strong>
-        Sea level and low-lying coastal areas.
-      </p>
-
-      <h4>Compound flooding – when the two interact</h4>
-      <p>
-        When sea levels are high, stormwater may have more
-        difficulty draining into the sea or rivers. If heavy
-        rainfall occurs at the same time, water can accumulate
-        more easily in low-lying urban areas.
-      </p>
-      <p><strong>Key concept:</strong>
-        Connected water systems.
-      </p>
-    </section>
-
-    <section class="learning-box">
-      <h3>2. When rain meets the sea</h3>
-      <h4>What happens when heavy rain meets high sea levels?</h4>
-      <p>
-        Rainwater in cities often flows through drains and
-        pipes into rivers or the sea. But what happens if
-        the sea level is already unusually high?
-      </p>
-      <p>
-        High sea levels can slow down the drainage of
-        stormwater. When heavy rainfall occurs at the same
-        time, water may accumulate more easily in streets
-        and low-lying areas.
-      </p>
-      <p>
-        This is one example of compound flooding: when
-        different flood processes interact and may make
-        flooding worse.
-      </p>
-      <strong>Explore the map</strong>
-      <p>
-        Can you find flood-prone areas near the Aura River
-        or the coast? What might happen to stormwater
-        drainage when the sea level rises?
-      </p>
-    </section>
-
-    <section class="learning-box">
-      <h3>3. How could climate change affect flooding?</h3>
-      <p>
-        As the climate warms, heavy rainfall may become
-        more intense. Changes in sea levels can also
-        influence coastal flooding.
-      </p>
-      <p>
-        In Turku, this matters because the city is located
-        on the coast, near the mouth of the Aura River,
-        where coastal water levels and urban drainage
-        can interact.
-      </p>
-      <strong>Explore the scenarios</strong>
-      <ul>
-        <li>Switch between moderate and high emissions.</li>
-        <li>Where do you see differences in flood extent?</li>
-        <li>Do areas with deeper water change?</li>
-        <li>What might this mean for your school surroundings?</li>
-      </ul>
-    </section>
-
-    <section class="learning-box">
-      <h3>4. How can we adapt?</h3>
-      <p>
-        Green spaces, permeable surfaces, stormwater ponds
-        and improved drainage systems can help cities
-        manage heavy rainfall.
-      </p>
-      <p>
-        Urban planning can also reduce risks by avoiding
-        vulnerable locations when building new infrastructure.
-      </p>
-      <strong>Think about your surroundings</strong>
-      <p>
-        What could be done to reduce flood risks near your school?
-      </p>
-    </section>
-
-    <section class="learning-box">
-      <h3>Explore the map: questions to think about</h3>
-      <ul>
-        <li>Where are the nearest modelled flood-prone areas?</li>
-        <li>Can you find areas with deeper water?</li>
-        <li>Are they close to the coast, a river or somewhere else?</li>
-        <li>How might buildings, asphalt and green spaces affect runoff?</li>
-        <li>What could be done to reduce flood risks?</li>
-      </ul>
-    </section>
-
-    <p class="map-note">
-      The map displays combined modelled coastal and stormwater
-      flood hazards. Individual flooded locations cannot be
-      classified as exclusively coastal or pluvial based on
-      this combined layer alone.
+  <section class="learning-box">
+    <h3>1. Why do cities flood when it rains?</h3>
+    <p>
+      Rainwater and melting snow cannot easily soak through hard surfaces
+      like asphalt and roofs. Instead, water flows along streets and into
+      drains. During heavy rainfall or rapid snowmelt, drainage systems
+      may become overwhelmed, causing flooding.
     </p>
-  </div>
+  </section>
+
+  <section class="learning-box">
+    <h3>2. What causes coastal flooding?</h3>
+    <p>
+      Strong winds and weather conditions can temporarily raise sea levels,
+      causing water to flood low-lying coastal areas and riverbanks.
+    </p>
+  </section>
+
+  <section class="learning-box">
+    <h3>3. When rain meets the sea</h3>
+    <p>
+      In Turku, these flood processes can interact. High sea levels can
+      make it harder for rainwater to drain into the sea, increasing
+      flooding in low-lying areas.
+    </p>
+  </section>
+
+  <section class="learning-box">
+    <h3>4. What does this map show?</h3>
+    <p>
+      This map shows modelled floodwater depths from combined coastal
+      and stormwater flood scenarios. The colours indicate where flooding
+      could occur and how deep the water might be. These are possible
+      future conditions, not real-time flooding.
+    </p>
+  </section>
+
+  <h2>Prompts for exploring the map</h2>
+
+  <section class="learning-box">
+    <h3>Task 1: Explore your school's surroundings</h3>
+    <p>
+      Find your school on the map. Where are the nearest areas that
+      could flood? Are they near streets, buildings or parks?
+    </p>
+  </section>
+
+  <section class="learning-box">
+    <h3>Task 2: Where are the most severe flood impacts expected?</h3>
+    <p>
+      Look at the different floodwater depth colours. Find a location
+      with deeper modelled flooding near your school. What might
+      explain why water collects there?
+    </p>
+  </section>
+
+  <section class="learning-box">
+    <h3>Task 3: City or nature?</h3>
+    <p>
+      Compare a built-up area and a green area around your school.
+      Where can rainwater soak into the ground more easily?
+      What kinds of surfaces do you see?
+    </p>
+  </section>
+
+  <section class="learning-box">
+    <h3>Task 4: Become a city planner</h3>
+    <p>
+      Imagine you're planning improvements to the area around your
+      school. Where would you add more green spaces, such as parks
+      and greenery, or other solutions to help manage rainwater?
+      Why?
+    </p>
+  </section>
+</div>
 `
 
 // Request GeoJSON data from GeoServer
@@ -561,73 +515,6 @@ function clipLayerToBuffer(layer) {
 }
 
 
-// Show flood depth when hovering over the map
-const depthTooltip = document.getElementById('depth-tooltip')
-
-let hoverTimeout
-
-map.on('pointermove', (event) => {
-  if (event.dragging) {
-    depthTooltip.style.display = 'none'
-    return
-  }
-
-  if (!document.getElementById('toggle-flood').checked) {
-    depthTooltip.style.display = 'none'
-    return
-  }
-
-  clearTimeout(hoverTimeout)
-
-  const pixel = event.pixel
-  const coordinate = event.coordinate
-
-  depthTooltip.style.display = 'none'
-
-  hoverTimeout = setTimeout(async () => {
-    const isHigh =
-      document.querySelector('input[name="scenario"]:checked').value === 'high'
-
-    const activeLayer = isHigh
-      ? highFloodLayer
-      : moderateFloodLayer
-
-    const source = activeLayer.getSource()
-
-    const url = source.getFeatureInfoUrl(
-      coordinate,
-      map.getView().getResolution(),
-      map.getView().getProjection(),
-      {
-        INFO_FORMAT: 'application/json',
-        FEATURE_COUNT: 1,
-      }
-    )
-
-    if (!url) return
-
-    try {
-      const response = await fetch(url)
-      const data = await response.json()
-
-      if (data.features && data.features.length > 0) {
-        const properties = data.features[0].properties
-
-        if (properties.DN !== undefined) {
-          depthTooltip.textContent = `Flood depth: ${properties.DN} cm`
-
-          depthTooltip.style.left = `${pixel[0] + 15}px`
-          depthTooltip.style.top = `${pixel[1] + 15}px`
-          depthTooltip.style.display = 'block'
-        }
-      }
-    } catch (error) {
-      console.error('Could not retrieve flood depth:', error)
-    }
-  }, 150)
-})
-
-
 clipLayerToBuffer(moderateFloodLayer)
 clipLayerToBuffer(highFloodLayer)
 
@@ -643,7 +530,7 @@ function selectSchool(school) {
   if (!matchingBuffer) {
     document.getElementById('info').innerHTML = `
       <h2>${schoolName}</h2>
-      <p>Could not find a matching 1 km school area.</p>
+      <p>Could not find a matching 1 km from school.</p>
     `
     return
   }
