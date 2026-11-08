@@ -10,6 +10,7 @@ import VectorSource from 'ol/source/Vector'
 import GeoJSON from 'ol/format/GeoJSON'
 import Style from 'ol/style/Style'
 import CircleStyle from 'ol/style/Circle'
+import Icon from 'ol/style/Icon'
 import Fill from 'ol/style/Fill'
 import Stroke from 'ol/style/Stroke'
 import { getRenderPixel } from 'ol/render.js'
@@ -278,23 +279,52 @@ function fixEncoding(text) {
     .replaceAll('Ã…', 'Å')
 }
 
-// School point style
+// School icons
+
+// Normal school - yellow
+const schoolIconSvg = `
+  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <path d="M5 17 L20 5 L35 17 V34 H5 Z"
+      fill="#F4C542" stroke="#ffffff" stroke-width="2"
+      stroke-linejoin="round"/>
+    <rect x="10" y="20" width="6" height="6" fill="#ffffff"/>
+    <rect x="24" y="20" width="6" height="6" fill="#ffffff"/>
+    <rect x="17" y="27" width="6" height="7" fill="#ffffff"/>
+  </svg>
+`
+
+// Selected school - orange
+const selectedSchoolIconSvg = `
+  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="21"
+      fill="#F28C28" stroke="#222222" stroke-width="2.5"/>
+    <path d="M10 23 L24 11 L38 23 V37 H10 Z"
+      fill="#F28C28" stroke="#222222" stroke-width="1.5"
+      stroke-linejoin="round"/>
+    <rect x="15" y="25" width="6" height="6" fill="#ffffff"/>
+    <rect x="27" y="25" width="6" height="6" fill="#ffffff"/>
+    <rect x="21" y="31" width="6" height="6" fill="#ffffff"/>
+  </svg>
+`
+
+// Normal school style
 const schoolStyle = new Style({
-  image: new CircleStyle({
-    radius: 7,
-    fill: new Fill({ color: '#1976D2' }),
-    stroke: new Stroke({ color: '#ffffff', width: 2 }),
+  image: new Icon({
+    src: `data:image/svg+xml;charset=utf-8,${encodeURIComponent(schoolIconSvg)}`,
+    anchor: [0.5, 0.5],
+    scale: 0.85,
   }),
 })
 
 // Selected school style
 const selectedSchoolStyle = new Style({
-  image: new CircleStyle({
-    radius: 11,
-    fill: new Fill({ color: '#FFEB3B' }),
-    stroke: new Stroke({ color: '#222222', width: 3 }),
+  image: new Icon({
+    src: `data:image/svg+xml;charset=utf-8,${encodeURIComponent(selectedSchoolIconSvg)}`,
+    anchor: [0.5, 0.5],
+    scale: 0.9,
   }),
 })
+
 
 // School layers
 const schoolsSource = new VectorSource()
