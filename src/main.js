@@ -28,10 +28,6 @@ const projection = 'EPSG:3857'
 document.querySelector('#app').innerHTML = `
   <div class="map-header">
     <h1>Explore Flood Risks Around Your School</h1>
-    <p>
-      Discover how rainfall, sea levels and climate change
-      can influence flooding in Turku.
-    </p>
   </div>
 
   <div class="map-container">
