@@ -45,6 +45,13 @@ document.querySelector('#app').innerHTML = `
       </p>
     </div>
 
+    <div id="info">
+  <h2>Explore flooding near your school</h2>
+  <p>
+    Choose a school to begin exploring the map.
+  </p>
+</div>
+
     <div class="map-controls">
       <label for="school-search">Find your school</label>
       <input
@@ -80,10 +87,6 @@ document.querySelector('#app').innerHTML = `
         <input type="checkbox" id="toggle-buffer" checked>
         1 km school area
       </label>
-      <label>
-        <input type="checkbox" id="toggle-study-area" checked>
-        Study area boundary
-      </label>
 
       <button id="reset-map">Reset map</button>
     </div>
@@ -116,12 +119,7 @@ document.querySelector('#app').innerHTML = `
     </div>
   </div>
 
-  <div id="info">
-    <h2>Explore flooding near your school</h2>
-    <p>
-      Choose a school to begin exploring the map.
-    </p>
-  </div>
+  
 
   <div class="learning-content">
     <h2>Learn about flooding</h2>
@@ -549,22 +547,13 @@ function selectSchool(school) {
     maxZoom: 16,
   })
 
-  const address = fixEncoding(school.get('osoite'))
-  const services = fixEncoding(school.get('palvelut'))
-
   document.getElementById('info').innerHTML = `
-    <h2>${schoolName}</h2>
-    <p><strong>Address:</strong>
-      ${address || 'Not available'}
-    </p>
-    <p><strong>Services:</strong>
-      ${services || 'Not available'}
-    </p>
-    <p>
-      Explore the modelled flood risks within 1 km
-      of this school.
-    </p>
-  `
+  <h2>${schoolName}</h2>
+  <p>
+    Explore the modelled flood risks within 1 km
+    of this school.
+  </p>
+`
 
   document.getElementById('toggle-buffer').checked = true
 
@@ -687,9 +676,6 @@ document.getElementById('toggle-buffer').addEventListener('change', (event) => {
   )
 })
 
-document.getElementById('toggle-study-area').addEventListener('change', (event) => {
-  studyAreaLayer.setVisible(event.target.checked)
-})
 
 // Reset map
 document.getElementById('reset-map').addEventListener('click', () => {
