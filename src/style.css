@@ -506,3 +506,137 @@ body {
   pointer-events: none;
   white-space: nowrap;
 }
+
+
+/* Flood scenario information */
+
+.scenario-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scenario-info {
+  position: relative;
+}
+
+.scenario-info summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  border: 1.5px solid #52716b;
+  border-radius: 50%;
+  color: #52716b;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.scenario-info summary::-webkit-details-marker {
+  display: none;
+}
+
+.scenario-info summary:hover {
+  background: #f0f3f2;
+}
+
+.scenario-info-content {
+  display: none;
+  position: absolute;
+  top: 27px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 270px;
+  max-width: calc(100vw - 40px);
+  box-sizing: border-box;
+  padding: 14px;
+  background: #ffffff;
+  border: 1px solid #d5e1dc;
+  border-radius: 7px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  z-index: 3000;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #435956;
+}
+
+.scenario-info[open] .scenario-info-content {
+  display: block;
+}
+
+
+
+/* Data sources information */
+
+.data-info {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 3000;
+}
+
+.data-info-details {
+  position: relative;
+}
+
+.data-info-details summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 23px;
+  height: 23px;
+  border: 1.5px solid #52716b;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #52716b;
+  font-size: 13px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.data-info-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.data-info-details summary:hover {
+  background: #f0f3f2;
+}
+
+.data-info-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 32px;
+  width: 360px;
+  max-width: calc(100vw - 40px);
+  max-height: 60vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #d5e1dc;
+  border-radius: 7px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  color: #435956;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.data-info-details[open] .data-info-content {
+  display: block;
+}
+
+.data-info-content p {
+  margin: 10px 0 0;
+}
+
+.data-info-content a {
+  color: #287c72;
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}

@@ -38,6 +38,58 @@ document.querySelector('#app').innerHTML = `
     <div id="map"></div>
     <div id="depth-tooltip"></div>
 
+<div class="data-info">
+  <details class="data-info-details">
+    <summary title="Data sources">i</summary>
+
+    <div class="data-info-content">
+      <strong>Data sources</strong>
+
+      <p>
+        OpenStreetMap: Cycling routes in Turku, Finland (2026).
+        OpenStreetMap contributors. Accessed 21.10.2026.
+        <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener noreferrer">
+          OpenStreetMap
+        </a>
+      </p>
+
+      <p>
+        Tulvaveden syvyys 1/100v hule- ja merivesitulva kohtalaisten
+        päästöjen skenaario (RCP4,5). Turun ammattikorkeakoulu,
+        Vesien ja ympäristönsuojelun tutkimusryhmä (2026).
+        Ilmastonkestävät investointihankkeet (IKI) – Alueellisiin
+        ilmastoriskeihin varautuminen kaupungin kaavoituksessa ja
+        suunnittelussa -hankkeen kartta-aineistot.
+        <a href="https://karttapalvelu.lounaistieto.fi/" target="_blank" rel="noopener noreferrer">
+          Lounaistieto
+        </a>
+      </p>
+
+      <p>
+        Tulvaveden syvyys 1/100v hule- ja merivesitulva korkeiden
+        päästöjen skenaario (RCP8,5). Turun ammattikorkeakoulu,
+        Vesien ja ympäristönsuojelun tutkimusryhmä (2026).
+        Ilmastonkestävät investointihankkeet (IKI) – Alueellisiin
+        ilmastoriskeihin varautuminen kaupungin kaavoituksessa ja
+        suunnittelussa -hankkeen kartta-aineistot.
+        <a href="https://karttapalvelu.lounaistieto.fi/" target="_blank" rel="noopener noreferrer">
+          Lounaistieto
+        </a>
+      </p>
+
+      <p>
+        Varsinais-Suomen ja Satakunnan palvelupisteet (2025).
+        OpenStreetMap &amp; Palvelutietovaranto.
+        <a href="https://avoindata.suomi.fi/data/fi/dataset/varsinais-suomen-ja-satakunnan-palvelupisteet"
+           target="_blank" rel="noopener noreferrer">
+          Avoindata.fi
+        </a>
+      </p>
+    </div>
+  </details>
+</div>
+
+
     <div class="map-instructions">
       <h3>Explore your surroundings</h3>
       <p>
@@ -63,7 +115,33 @@ document.querySelector('#app').innerHTML = `
       >
       <datalist id="school-list"></datalist>
 
+    <div class="scenario-heading">
       <h3>Flood scenario</h3>
+
+      <details class="scenario-info">
+    <summary title="About flood scenarios">i</summary>
+
+    <div class="scenario-info-content">
+      <strong>How could climate change affect flooding in Turku?</strong>
+
+      <p>
+        As the climate warms, heavy rainfall may become more intense and snowfall and snowmelt cycles change. Sea-level change and more frequent and intense storms can also make coastal flooding more common.
+      </p>
+
+      <p>
+        This map shows two future climate scenarios: 
+        <p>
+          - Moderate (RCP 4.5): Greenhouse gas emissions increase before declining later this century. 
+        <p>
+        <p>
+          - High (RCP 8.5): Greenhouse gas emissions remain very high, leading to stronger warming.
+        <p>
+      </p>
+    </div>
+  </details>
+</div>
+
+
       <label>
         <input type="radio" name="scenario"
           value="moderate" checked>
