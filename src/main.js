@@ -394,7 +394,7 @@ const bufferLayer = new VectorLayer({
   visible: false,
   style: new Style({
     fill: new Fill({
-      color: 'rgba(255, 193, 7, 0.10)',
+      color: 'rgba(255, 193, 7, 0)',
     }),
     stroke: new Stroke({
       color: '#e53935',
