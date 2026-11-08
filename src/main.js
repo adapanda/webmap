@@ -94,14 +94,29 @@ document.querySelector('#app').innerHTML = `
 
     <div class="map-legend">
       <h3>Legend</h3>
+
       <div class="legend-item">
-        <span class="legend-school"></span>
-        Schools
-      </div>
-      <div class="legend-item">
-        <span class="legend-selected-school"></span>
-        Selected school
-      </div>
+  <svg width="20" height="20" viewBox="0 0 40 40">
+    <path d="M5 17 L20 5 L35 17 V34 H5 Z"
+      fill="#F4C542"
+      stroke="#ffffff"
+      stroke-width="2.5"
+      stroke-linejoin="round"/>
+  </svg>
+  Schools
+</div>
+
+<div class="legend-item">
+  <svg width="20" height="20" viewBox="0 0 40 40">
+    <path d="M5 17 L20 5 L35 17 V34 H5 Z"
+      fill="#F28C28"
+      stroke="#222222"
+      stroke-width="2.5"
+      stroke-linejoin="round"/>
+  </svg>
+  Selected school
+</div>
+
       <div class="legend-item">
         <span class="legend-buffer"></span>
         1 km school area
@@ -285,25 +300,21 @@ function fixEncoding(text) {
 const schoolIconSvg = `
   <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
     <path d="M5 17 L20 5 L35 17 V34 H5 Z"
-      fill="#F4C542" stroke="#ffffff" stroke-width="2"
+      fill="#F4C542"
+      stroke="#ffffff"
+      stroke-width="2.5"
       stroke-linejoin="round"/>
-    <rect x="10" y="20" width="6" height="6" fill="#ffffff"/>
-    <rect x="24" y="20" width="6" height="6" fill="#ffffff"/>
-    <rect x="17" y="27" width="6" height="7" fill="#ffffff"/>
   </svg>
 `
 
 // Selected school - orange
 const selectedSchoolIconSvg = `
-  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
-    <circle cx="24" cy="24" r="21"
-      fill="#F28C28" stroke="#222222" stroke-width="2.5"/>
-    <path d="M10 23 L24 11 L38 23 V37 H10 Z"
-      fill="#F28C28" stroke="#222222" stroke-width="1.5"
+  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <path d="M5 17 L20 5 L35 17 V34 H5 Z"
+      fill="#F28C28"
+      stroke="#222222"
+      stroke-width="2.5"
       stroke-linejoin="round"/>
-    <rect x="15" y="25" width="6" height="6" fill="#ffffff"/>
-    <rect x="27" y="25" width="6" height="6" fill="#ffffff"/>
-    <rect x="21" y="31" width="6" height="6" fill="#ffffff"/>
   </svg>
 `
 
@@ -579,10 +590,6 @@ function selectSchool(school) {
 
   document.getElementById('info').innerHTML = `
   <h2>${schoolName}</h2>
-  <p>
-    Explore the modelled flood risks within 1 km
-    of this school.
-  </p>
 `
 
   document.getElementById('toggle-buffer').checked = true
