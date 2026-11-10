@@ -219,7 +219,7 @@ document.querySelector('#app').innerHTML = `
   </div>
 </div>
   
-
+</div> <!-- End of map-container -->
   <div class="learning-content">
   <h2>Why does flooding happen in Turku?</h2>
 
