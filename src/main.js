@@ -27,7 +27,8 @@ const projection = 'EPSG:3857'
 // Create the application layout
 document.querySelector('#app').innerHTML = `
   <div class="map-header">
-    <h1>Explore Flood Risks Around Your School</h1>
+    <h1>Flood explorer - explore urban flooding around your school</h1>
+      <h2>Select a school on the map or search for its name. Explore modelled flood risks within 1 km of the school.</h2>
   </div>
 
   <div class="map-container">
@@ -86,13 +87,7 @@ document.querySelector('#app').innerHTML = `
 </div>
 
 
-    <div class="map-instructions">
-      <h3>Explore your surroundings</h3>
-      <p>
-        Select a school on the map or search for its name.
-        Explore modelled flood risks within 1 km of the school.
-      </p>
-    </div>
+   
 
     <div id="info">
   <h2>Explore flooding near your school</h2>
