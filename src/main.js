@@ -27,8 +27,8 @@ const projection = 'EPSG:3857'
 // Create the application layout
 document.querySelector('#app').innerHTML = `
   <div class="map-header">
-    <h1>Flood explorer - explore urban flooding around your school</h1>
-      <h2>Select a school on the map or search for its name. Explore modelled flood risks within 1 km of the school.</h2>
+    <h1>Flood explorer - Investigate flooding around your school</h1>
+      <h2>Find your school on the map or search for its name. Discover where flooding could happen within 1 km of your school, how deep the water could get, and what causes urban flooding.</h2>
   </div>
 
   <div class="map-container">
@@ -87,16 +87,17 @@ document.querySelector('#app').innerHTML = `
 </div>
 
 
-   
+  
 
-    <div id="info">
+    <div class="map-controls">
+
+     <div id="info">
   <h2>Explore flooding near your school</h2>
   <p>
     Choose a school to begin exploring the map.
   </p>
 </div>
 
-    <div class="map-controls">
       <label for="school-search">Find your school</label>
       <input
         id="school-search"
@@ -196,23 +197,23 @@ document.querySelector('#app').innerHTML = `
 
     <div class="legend-depth-classes">
       <div class="legend-depth-class">
-        <span style="background: #f7fbff"></span>
+        <span style="background: #cfe7ff"></span>
         <small>10-20</small>
       </div>
       <div class="legend-depth-class">
-        <span style="background: #d7e7f6"></span>
+        <span style="background: #9ccfff"></span>
         <small>20-30</small>
       </div>
       <div class="legend-depth-class">
-        <span style="background: #9fcee7"></span>
+        <span style="background: #5aa1d9"></span>
         <small>30-40</small>
       </div>
       <div class="legend-depth-class">
-        <span style="background: #2e81b6"></span>
+        <span style="background: #25539b"></span>
         <small>40-50</small>
       </div>
       <div class="legend-depth-class">
-        <span style="background-color: #164671"></span>
+        <span style="background-color: #00105b"></span>
         <small>50+</small>
       </div>
     </div>
@@ -231,26 +232,17 @@ document.querySelector('#app').innerHTML = `
       drains. During heavy rainfall or rapid snowmelt, drainage systems
       may become overwhelmed, causing flooding.
     </p>
-  </section>
-
-  <section class="learning-box">
     <h3>2. What causes coastal flooding?</h3>
     <p>
       Strong winds and weather conditions can temporarily raise sea levels,
       causing water to flood low-lying coastal areas and riverbanks.
     </p>
-  </section>
-
-  <section class="learning-box">
     <h3>3. When rain meets the sea</h3>
     <p>
       In Turku, these flood processes can interact. High sea levels can
       make it harder for rainwater to drain into the sea, increasing
       flooding in low-lying areas.
     </p>
-  </section>
-
-  <section class="learning-box">
     <h3>4. What does this map show?</h3>
     <p>
       This map shows modelled floodwater depths from combined coastal
@@ -260,36 +252,29 @@ document.querySelector('#app').innerHTML = `
     </p>
   </section>
 
+
   <h2>Prompts for exploring the map</h2>
 
   <section class="learning-box">
-    <h3>Task 1: Explore your school's surroundings</h3>
+    <h3>Mission 1: Explore your school's surroundings</h3>
     <p>
       Find your school on the map. Where are the nearest areas that
       could flood? Are they near streets, buildings or parks?
     </p>
-  </section>
 
-  <section class="learning-box">
-    <h3>Task 2: Where are the most severe flood impacts expected?</h3>
+    <h3>Mission 2: Where are the most severe flood impacts expected?</h3>
     <p>
       Look at the different floodwater depth colours. Find a location
       with deeper modelled flooding near your school. What might
       explain why water collects there?
     </p>
-  </section>
-
-  <section class="learning-box">
-    <h3>Task 3: City or nature?</h3>
+    <h3>Mission 3: City or nature?</h3>
     <p>
       Compare a built-up area and a green area around your school.
       Where can rainwater soak into the ground more easily?
       What kinds of surfaces do you see?
     </p>
-  </section>
-
-  <section class="learning-box">
-    <h3>Task 4: Become a city planner</h3>
+    <h3>Mission 4: Become a city planner</h3>
     <p>
       Imagine you're planning improvements to the area around your
       school. Where would you add more green spaces, such as parks
