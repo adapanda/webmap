@@ -465,28 +465,6 @@ body {
   color: #435956;
 }
 
-.legend-depth-gradient {
-  width: 100%;
-  height: 13px;
-  border-radius: 3px;
-  background: linear-gradient(
-    to right,
-    #f7fbff,
-    #d7e7f6,
-    #9fcee7,
-    #2e81b6,
-    #164671
-  );
-  border: 1px solid rgba(30, 60, 80, 0.2);
-}
-
-.legend-depth-labels {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 5px;
-  font-size: 11px;
-  color: #536765;
-}
 
 /* Flood depth hover information */
 
@@ -639,4 +617,30 @@ body {
   color: #287c72;
   text-decoration: underline;
   overflow-wrap: anywhere;
+}
+
+.legend-depth-classes {
+  display: flex;
+  gap: 3px;
+  margin-top: 6px;
+}
+
+.legend-depth-class {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.legend-depth-class span {
+  display: block;
+  height: 14px;
+  border: 1px solid rgba(30, 60, 80, 0.2);
+  border-radius: 2px;
+}
+
+.legend-depth-class small {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  color: #536765;
 }

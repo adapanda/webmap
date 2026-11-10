@@ -166,49 +166,63 @@ document.querySelector('#app').innerHTML = `
       <button id="reset-map">Reset map</button>
     </div>
 
-    <div class="map-legend">
-      <h3>Legend</h3>
+  <div class="map-legend">
+  <h3>Legend</h3>
 
-      <div class="legend-item">
-  <svg width="20" height="20" viewBox="0 0 40 40">
-    <path d="M5 17 L20 5 L35 17 V34 H5 Z"
-      fill="#F4C542"
-      stroke="#ffffff"
-      stroke-width="2.5"
-      stroke-linejoin="round"/>
-  </svg>
-  Schools
-</div>
+  <div class="legend-item">
+    <svg width="20" height="20" viewBox="0 0 40 40">
+      <path d="M5 17 L20 5 L35 17 V34 H5 Z"
+        fill="#F4C542"
+        stroke="#ffffff"
+        stroke-width="2.5"
+        stroke-linejoin="round"/>
+    </svg>
+    Schools
+  </div>
 
-<div class="legend-item">
-  <svg width="20" height="20" viewBox="0 0 40 40">
-    <path d="M5 17 L20 5 L35 17 V34 H5 Z"
-      fill="#F28C28"
-      stroke="#222222"
-      stroke-width="2.5"
-      stroke-linejoin="round"/>
-  </svg>
-  Selected school
-</div>
+  <div class="legend-item">
+    <svg width="20" height="20" viewBox="0 0 40 40">
+      <path d="M5 17 L20 5 L35 17 V34 H5 Z"
+        fill="#F28C28"
+        stroke="#222222"
+        stroke-width="2.5"
+        stroke-linejoin="round"/>
+    </svg>
+    Selected school
+  </div>
 
-      <div class="legend-item">
-        <span class="legend-buffer"></span>
-        1 km from school
+  <div class="legend-item">
+    <span class="legend-buffer"></span>
+    1 km from school
+  </div>
+
+  <div class="legend-depth">
+    <div class="legend-depth-title">Flood depth (cm)</div>
+
+    <div class="legend-depth-classes">
+      <div class="legend-depth-class">
+        <span style="background: #f7fbff"></span>
+        <small>10-20</small>
       </div>
-      <div class="legend-depth">
-        <div class="legend-depth-title">Flood depth (cm)</div>
-        <div class="legend-depth-gradient"></div>
-        <div class="legend-depth-labels">
-          <span>10</span>
-          <span>20</span>
-          <span>30</span>
-          <span>40</span>
-          <span>50</span>
+      <div class="legend-depth-class">
+        <span style="background: #d7e7f6"></span>
+        <small>20-30</small>
       </div>
+      <div class="legend-depth-class">
+        <span style="background: #9fcee7"></span>
+        <small>30-40</small>
+      </div>
+      <div class="legend-depth-class">
+        <span style="background: #2e81b6"></span>
+        <small>40-50</small>
+      </div>
+      <div class="legend-depth-class">
+        <span style="background-color: #164671"></span>
+        <small>50+</small>
       </div>
     </div>
   </div>
-
+</div>
   
 
   <div class="learning-content">
