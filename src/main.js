@@ -28,7 +28,19 @@ const projection = 'EPSG:3857'
 document.querySelector('#app').innerHTML = `
   <div class="map-header">
     <h1>Flood explorer - Investigate flooding around your school</h1>
-      <h2>Find your school on the map or search for its name. Discover where flooding could happen within 1 km of your school, how deep the water could get, and what causes urban flooding.</h2>
+
+    <h2>
+      Find your school on the map or search for its name.
+      Discover where flooding could happen within 1 km of your school,
+      how deep the water could get, and what causes urban flooding.
+    </h2>
+
+    <div class="scroll-prompt">
+      <span class="scroll-arrow">↓</span>
+      <span>SCROLL DOWN</span>
+      <span class="scroll-arrow">↓</span>
+    </div>
+
   </div>
 
   <div class="map-container">
