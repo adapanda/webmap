@@ -237,61 +237,57 @@ document.querySelector('#app').innerHTML = `
   <h2>Why does flooding happen in Turku?</h2>
 
   <section class="learning-box">
-    <h3>1. Why do cities flood when it rains?</h3>
+    <h3>1. Where does rainwater go? </h3>
     <p>
-      Rainwater and melting snow cannot easily soak through hard surfaces
-      like asphalt and roofs. Instead, water flows along streets and into
-      drains. During heavy rainfall or rapid snowmelt, drainage systems
-      may become overwhelmed, causing flooding.
+      When it rains, some water soaks into the ground. But in cities, hard surfaces like roads, rooftops and asphalt prevent water from soaking in. Instead, rainwater flows along streets and into storm drains. During heavy rainfall or rapid snowmelt, water can collect faster than drainage systems can carry it away, causing stormwater flooding.
     </p>
-    <h3>2. What causes coastal flooding?</h3>
+    <h3>2. Can the sea flood a city? </h3>
     <p>
-      Strong winds and weather conditions can temporarily raise sea levels,
-      causing water to flood low-lying coastal areas and riverbanks.
+      Yes! Strong winds and changes in weather conditions can temporarily raise sea levels. When the water rises high enough, it can flood low-lying coastal areas and riverbanks. This is called coastal flooding. 
     </p>
-    <h3>3. When rain meets the sea</h3>
+    <h3>3.What happens when heavy rain meets a high sea level? </h3>
     <p>
-      In Turku, these flood processes can interact. High sea levels can
-      make it harder for rainwater to drain into the sea, increasing
-      flooding in low-lying areas.
+      In a coastal city like Turku, stormwater and coastal flooding can happen together. When the sea level is unusually high, rainwater may have difficulty draining into the sea. This can make flooding worse in low-lying areas.  
     </p>
-    <h3>4. What does this map show?</h3>
+    <h3>4. How can climate change affect flooding? </h3>
     <p>
-      This map shows modelled floodwater depths from combined coastal
-      and stormwater flood scenarios. The colours indicate where flooding
-      could occur and how deep the water might be. These are possible
-      future conditions, not real-time flooding.
+      As the climate warms, heavy rainfall can become more intense. Sea levels are also rising as ocean water warms and land ice melts. Scientists use different climate scenarios to explore possible futures. Both can increase flooding in cities like Turku. 
     </p>
+    <h3>5. What does this map show?</h3>
+    <p>
+    This map shows where flooding could happen in Turku in the year 2100 and how deep the water might be. You can compare two possible climate futures: one with moderate greenhouse gas emissions and moderate warming and one with stronger warming. 
+
+    The map shows a rare flood scenario, based on a flood with a 1 in 100 chance of happening in any year. The colours show the modelled water depth, not real-time flooding. 
+    </p>  
   </section>
 
 
-  <h2>Prompts for exploring the map</h2>
+  <h2>Become a Flood Explorer! </h2>
 
   <section class="learning-box">
     <h3>Mission 1: Explore your school's surroundings</h3>
     <p>
-      Find your school on the map. Where are the nearest areas that
-      could flood? Are they near streets, buildings or parks?
+      Find your school on the map. Where are the nearest areas that could flood? Are they near streets, buildings or parks? 
     </p>
 
-    <h3>Mission 2: Where are the most severe flood impacts expected?</h3>
+    <h3>Mission 2: Where could the water be deepest? </h3>
     <p>
-      Look at the different floodwater depth colours. Find a location
-      with deeper modelled flooding near your school. What might
-      explain why water collects there?
+      Look at the different floodwater depth colours. Find an area with deeper modelled flooding near your school. 
+      Why might water collect here? Does the area appear low-lying, or is it surrounded by hard surfaces? 
     </p>
     <h3>Mission 3: City or nature?</h3>
     <p>
-      Compare a built-up area and a green area around your school.
-      Where can rainwater soak into the ground more easily?
-      What kinds of surfaces do you see?
+      Compare a built-up area with a green area near your school. Where can rainwater soak into the ground more easily? How might trees, grass and other vegetation help reduce stormwater flooding? 
     </p>
-    <h3>Mission 4: Become a city planner</h3>
+    <h3>Mission 4: Two possible futures </h3>
     <p>
-      Imagine you're planning improvements to the area around your
-      school. Where would you add more green spaces, such as parks
-      and greenery, or other solutions to help manage rainwater?
-      Why?
+      Switch between the moderate and high scenarios. 
+      Investigate: Where does the modelled flooding change? Can you find an area where the flood depth increases? Are there also places where it stays similar? 
+    </p>
+    <h3>Mission 5: Become a city planner! </h3>
+    <p>
+      Imagine you're planning improvements to the area around your school. Where would you add more green spaces, such as parks and greenery, or other solutions to help manage rainwater? Why?  
+      Would the same solutions work for coastal flooding? What else might be needed? 
     </p>
   </section>
 </div>
