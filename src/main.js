@@ -35,11 +35,11 @@ document.querySelector('#app').innerHTML = `
       how deep the water could get, and what causes urban flooding.
     </h2>
 
-    <div class="scroll-prompt">
-      <span class="scroll-arrow">↓</span>
-      <span>SCROLL DOWN</span>
-      <span class="scroll-arrow">↓</span>
-    </div>
+    <a href="#why-flooding" class="scroll-prompt">
+  <span class="scroll-arrow">↓</span>
+  <span>SCROLL DOWN TO EXPLORE WHY FLOODING HAPPENS IN TURKU</span>
+  <span class="scroll-arrow">↓</span>
+</a>
 
   </div>
 
@@ -234,6 +234,7 @@ document.querySelector('#app').innerHTML = `
   
 </div> <!-- End of map-container -->
   <div class="learning-content">
+  <section id="why-flooding">
   <h2>Why does flooding happen in Turku?</h2>
 
   <section class="learning-box">
@@ -259,6 +260,7 @@ document.querySelector('#app').innerHTML = `
 
     The map shows a rare flood scenario, based on a flood with a 1 in 100 chance of happening in any year. The colours show the modelled water depth, not real-time flooding. 
     </p>  
+  </section>
   </section>
 
 
