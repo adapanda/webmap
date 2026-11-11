@@ -37,7 +37,7 @@ document.querySelector('#app').innerHTML = `
 
     <a href="#why-flooding" class="scroll-prompt">
   <span class="scroll-arrow">↓</span>
-  <span>SCROLL DOWN TO EXPLORE WHY FLOODING HAPPENS IN TURKU</span>
+  <span>SCROLL DOWN TO EXPLORE WHY FLOODING HAPPENS IN TURKU AND BECOME A FLOOD EXPLORER</span>
   <span class="scroll-arrow">↓</span>
 </a>
 
@@ -236,7 +236,6 @@ document.querySelector('#app').innerHTML = `
   <div class="learning-content">
   <section id="why-flooding">
   <h2>Why does flooding happen in Turku?</h2>
-
   <section class="learning-box">
     <h3>1. Where does rainwater go? </h3>
     <p>
