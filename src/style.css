@@ -54,32 +54,6 @@ body {
   max-width: 850px;
 }
 
-/* Header top row */
-
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.header-tagline {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #d8f5f3;
-}
-
-.header-location {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
 /* Main description */
 
 .map-header h2 {
@@ -89,13 +63,6 @@ body {
   margin: 5px 0 8px;
 }
 
-.header-description {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #e3f7f7;
-  max-width: 850px;
-  margin: 0;
-}
 
 .scroll-prompt {
   display: flex;
@@ -124,19 +91,9 @@ body {
   color: #f1c75b;
 }
 
-
-/* Map section label */
-
-.map-section-label {
-  background: #f1c75b;
-  color: #354b50;
-  padding: 10px 32px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+html {
+  scroll-behavior: smooth;
 }
-
-
 
 /* Map */
 
@@ -169,19 +126,6 @@ body {
 }
 
 /* Map instructions */
-
-.map-instructions {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  z-index: 1000;
-  width: 260px;
-  padding: 16px 18px;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid #dce5e2;
-  border-radius: 10px;
-  box-shadow: 0 3px 12px rgba(30, 60, 55, 0.12);
-}
 
 .map-instructions h3 {
   margin: 0 0 8px;
@@ -304,27 +248,6 @@ body {
   margin-bottom: 0;
 }
 
-.legend-school,
-.legend-selected-school {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.legend-school {
-  background: #1976D2;
-  border: 2px solid white;
-  outline: 1px solid #1976D2;
-}
-
-.legend-selected-school {
-  width: 13px;
-  height: 13px;
-  background: #FFEB3B;
-  border: 2px solid #263746;
-}
-
 .legend-buffer {
   width: 28px;
   height: 0;
@@ -332,14 +255,6 @@ body {
   border-top: 2px dashed #e36b4e;
 }
 
-.legend-flood-area {
-  width: 15px;
-  height: 15px;
-  flex-shrink: 0;
-  background: rgba(57, 155, 209, 0.45);
-  border: 1px solid #176B9A;
-  border-radius: 2px;
-}
 
 /* Panel introduction */
 
@@ -431,15 +346,6 @@ body {
   color: #214b4a;
 }
 
-.map-note {
-  margin-top: 25px;
-  padding: 16px 18px;
-  border-left: 4px solid #287c72;
-  background: #e9f1ee;
-  color: #536765;
-  font-size: 13px;
-  line-height: 1.6;
-}
 
 /* OpenLayers scale bar */
 
@@ -557,27 +463,6 @@ body {
   font-size: 12px;
   color: #435956;
 }
-
-
-/* Flood depth hover information */
-
-#depth-tooltip {
-  display: none;
-  position: absolute;
-  z-index: 2000;
-  padding: 8px 11px;
-  background: rgba(255, 255, 255, 0.97);
-  border: 1px solid #b8cbc5;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(30, 60, 55, 0.2);
-  color: #214b4a;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  pointer-events: none;
-  white-space: nowrap;
-}
-
 
 /* Flood scenario information */
 

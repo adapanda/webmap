@@ -9,7 +9,6 @@ import TileWMS from 'ol/source/TileWMS'
 import VectorSource from 'ol/source/Vector'
 import GeoJSON from 'ol/format/GeoJSON'
 import Style from 'ol/style/Style'
-import CircleStyle from 'ol/style/Circle'
 import Icon from 'ol/style/Icon'
 import Fill from 'ol/style/Fill'
 import Stroke from 'ol/style/Stroke'
@@ -45,7 +44,6 @@ document.querySelector('#app').innerHTML = `
 
   <div class="map-container">
     <div id="map"></div>
-    <div id="depth-tooltip"></div>
 
 <div class="data-info">
   <details class="data-info-details">
@@ -55,7 +53,6 @@ document.querySelector('#app').innerHTML = `
       <strong>Data sources</strong>
 
       <p>
-        OpenStreetMap: Cycling routes in Turku, Finland (2026).
         OpenStreetMap contributors. Accessed 21.10.2026.
         <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener noreferrer">
           OpenStreetMap
@@ -134,13 +131,10 @@ document.querySelector('#app').innerHTML = `
 
       <p>
         This map shows two future climate scenarios: 
-        <p>
-          - Moderate (RCP 4.5): Greenhouse gas emissions increase before declining later this century. 
-        <p>
-        <p>
-          - High (RCP 8.5): Greenhouse gas emissions remain very high, leading to stronger warming.
-        <p>
-      </p>
+        <ul>
+          <li>Moderate (RCP 4.5): Greenhouse gas emissions increase before declining later this century. 
+          <li>High (RCP 8.5): Greenhouse gas emissions remain very high, leading to stronger warming.
+      </ul>
     </div>
   </details>
 </div>
@@ -245,7 +239,7 @@ document.querySelector('#app').innerHTML = `
     <p>
       Yes! Strong winds and changes in weather conditions can temporarily raise sea levels. When the water rises high enough, it can flood low-lying coastal areas and riverbanks. This is called coastal flooding. 
     </p>
-    <h3>3.What happens when heavy rain meets a high sea level? </h3>
+    <h3>3. What happens when heavy rain meets a high sea level? </h3>
     <p>
       In a coastal city like Turku, stormwater and coastal flooding can happen together. When the sea level is unusually high, rainwater may have difficulty draining into the sea. This can make flooding worse in low-lying areas.  
     </p>
@@ -263,34 +257,83 @@ document.querySelector('#app').innerHTML = `
   </section>
 
 
-  <h2>Become a Flood Explorer! </h2>
+<h2>Become a Flood Explorer!</h2>
 
-  <section class="learning-box">
-    <h3>Mission 1: Explore your school's surroundings</h3>
-    <p>
-      Find your school on the map. Where are the nearest areas that could flood? Are they near streets, buildings or parks? 
-    </p>
+<section class="learning-box">
 
-    <h3>Mission 2: Where could the water be deepest? </h3>
+  <div class="mission-progress">
+    <p id="mission-count">0/5 missions completed</p>
+    <div class="progress-bar">
+      <div id="progress-fill"></div>
+    </div>
+  </div>
+
+  <div class="mission">
+    <h3>
+      <label>
+        <input type="checkbox" class="mission-checkbox">
+        Mission 1: Explore your school's surroundings
+      </label>
+    </h3>
     <p>
-      Look at the different floodwater depth colours. Find an area with deeper modelled flooding near your school. 
-      Why might water collect here? Does the area appear low-lying, or is it surrounded by hard surfaces? 
+      Find your school on the map. Where are the nearest areas that could flood? Are they near streets, buildings or parks?
     </p>
-    <h3>Mission 3: City or nature?</h3>
+  </div>
+
+  <div class="mission">
+    <h3>
+      <label>
+        <input type="checkbox" class="mission-checkbox">
+        Mission 2: Where could the water be deepest?
+      </label>
+    </h3>
     <p>
-      Compare a built-up area with a green area near your school. Where can rainwater soak into the ground more easily? How might trees, grass and other vegetation help reduce stormwater flooding? 
+      Look at the different floodwater depth colours. Find an area with deeper modelled flooding near your school.
+      Why might water collect here? Does the area appear low-lying, or is it surrounded by hard surfaces?
     </p>
-    <h3>Mission 4: Two possible futures </h3>
+  </div>
+
+  <div class="mission">
+    <h3>
+      <label>
+        <input type="checkbox" class="mission-checkbox">
+        Mission 3: City or nature?
+      </label>
+    </h3>
     <p>
-      Switch between the moderate and high scenarios. 
-      Investigate: Where does the modelled flooding change? Can you find an area where the flood depth increases? Are there also places where it stays similar? 
+      Compare a built-up area with a green area near your school. Where can rainwater soak into the ground more easily? How might trees, grass and other vegetation help reduce stormwater flooding?
     </p>
-    <h3>Mission 5: Become a city planner! </h3>
+  </div>
+
+  <div class="mission">
+    <h3>
+      <label>
+        <input type="checkbox" class="mission-checkbox">
+        Mission 4: Two possible futures
+      </label>
+    </h3>
     <p>
-      Imagine you're planning improvements to the area around your school. Where would you add more green spaces, such as parks and greenery, or other solutions to help manage rainwater? Why?  
-      Would the same solutions work for coastal flooding? What else might be needed? 
+      Switch between the moderate and high scenarios.
+      Investigate: Where does the modelled flooding change? Can you find an area where the flood depth increases? Are there also places where it stays similar?
     </p>
-  </section>
+  </div>
+
+  <div class="mission">
+    <h3>
+      <label>
+        <input type="checkbox" class="mission-checkbox">
+        Mission 5: Become a city planner!
+      </label>
+    </h3>
+    <p>
+      Imagine you're planning improvements to the area around your school. Where would you add more green spaces, such as parks and greenery, or other solutions to help manage rainwater? Why?
+      Would the same solutions work for coastal flooding? What else might be needed?
+    </p>
+  </div>
+
+  <p id="mission-complete-message"></p>
+
+</section>
 </div>
 `
 
@@ -705,3 +748,29 @@ document.getElementById('reset-map').addEventListener('click', () => {
 
 // Start loading data
 loadData()
+
+
+const missionCheckboxes = document.querySelectorAll(".mission-checkbox");
+const missionCount = document.getElementById("mission-count");
+const progressFill = document.getElementById("progress-fill");
+const completeMessage = document.getElementById("mission-complete-message");
+
+missionCheckboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", () => {
+    const completed = document.querySelectorAll(
+      ".mission-checkbox:checked"
+    ).length;
+
+    const total = missionCheckboxes.length;
+    const percentage = (completed / total) * 100;
+
+    missionCount.textContent = `${completed}/${total} missions completed`;
+    progressFill.style.width = `${percentage}%`;
+
+    if (completed === total) {
+      completeMessage.textContent = "Congratulations! You completed all missions!";
+    } else {
+      completeMessage.textContent = "";
+    }
+  });
+});
